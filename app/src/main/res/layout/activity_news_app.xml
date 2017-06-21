@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/searchBackground"
+    android:orientation="vertical"
+    tools:context="com.weirdresonance.android.newsapp.NewsAppActivity">
+
+    <!-- Frame layout to hold the search bar and clear button -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- EditText view used for search entry -->
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:hint="@string/enter_your_search_text"
+            android:inputType="text"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:textColor="@color/primary_text"
+            android:textSize="18sp" />
+
+
+
+    </FrameLayout>
+
+    <!-- Search button -->
+    <Button
+        android:id="@+id/searchButton"
+        style="?android:attr/bottomRightRadius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:elevation="2dp"
+        android:text="@string/search"
+        android:textColor="#FFF" />
+
+    <!-- ListView that will hold the list of books retrieved from Google Books API -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:background="#FFF"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:paddingTop="16dp" />
+
+
+    <!-- Empty view is only visible when the list has no items. -->
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/secondary_text"
+        android:visibility="gone" />
+
+    <!-- Spinning progress indicator shown when books are loading -->
+    <ProgressBar
+        android:id="@+id/loading_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:visibility="gone" />
+
+
+</LinearLayout>
+
+
